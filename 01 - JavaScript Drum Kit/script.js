@@ -9,7 +9,6 @@ var findElementsByTagAndAtr = function (tagName, Attribute) {
 
 
 var keyDownHandler = function (event) {
-	console.log("caught event", event);
 	var keyCode = event.keyCode.toString();
 	var buttonForKey = findElementsByTagAndAtr('button', 'data-key')
 	.find(function(b) {
@@ -30,4 +29,18 @@ var keyDownHandler = function (event) {
 
 document.addEventListener("DOMContentLoaded", function () {
 	window.addEventListener('keydown', keyDownHandler);
+	var buttons = findElementsByTagAndAtr('button', 'data-key');
+	var audios = findElementsByTagAndAtr('audio', 'data-key');
+	var soundNames = {};
+	audios.forEach(function(a) {
+		var audioCode = a.dataset.key;
+		var audioName = a.src.match(/sounds\/([a-zA-Z]+)\.wav$/i);
+		soundNames[audioCode] = audioName[1];
+	});
+	buttons.forEach(function(b) {
+		var soundElement = document.createElement('span');
+		soundElement.classList.add('sound');
+		soundElement.innerHTML = soundNames[b.dataset.key];
+		b.appendChild(soundElement);
+	});
 });

@@ -5,7 +5,9 @@ body {
 .buttons-container {
 	position: absolute;
 	top: 25%;
-	left: 50%;
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
 }
 
 button {
@@ -17,8 +19,9 @@ button {
 	box-shadow: 1px 1px 5px #aaaaaa; 
 
 	width: 70px;
+	max-width: 70px;
+	min-width: 70px;
 	height: 70px;
-	margin: 0 1.5rem;
 	padding: 0.2rem;
 }
 
