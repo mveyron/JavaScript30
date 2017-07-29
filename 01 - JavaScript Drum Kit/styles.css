@@ -1,0 +1,48 @@
+body {
+	background-color: #300032;
+}
+
+.buttons-container {
+	position: absolute;
+	top: 25%;
+	left: 50%;
+}
+
+button {
+	background-color: #06000a;
+	text-align: center;
+
+	border: 1px solid #06000a;
+	border-radius: 10px;
+	box-shadow: 1px 1px 5px #aaaaaa; 
+
+	width: 70px;
+	height: 70px;
+	margin: 0 1.5rem;
+	transition: all 0.5s;
+	padding: 0.2rem;
+}
+
+button:focus,
+button:active {
+	outline: none;
+}
+
+button.playing {
+	transform: scale(1.1);
+	border-color: #c43235;
+	box-shadow: 2px 2px 10px #c43235, -2px -2px 10px #c43235;
+}
+
+button >kbd {
+	font-size: 2rem;
+	color: #e6e6e8;
+}
+
+button >span.sound {
+	font-weight: normal;
+	font-size: 1rem;
+	font-variant: small-caps;
+	color: #c43235 ;
+	display: block;
+}
