@@ -1,23 +1,7 @@
-var findElementsByTagAndAtr = function (tagName, Attribute) {
-	var elementsByTag = Array.prototype.slice.call(document.getElementsByTagName(tagName));
-	var elementsByTagAndAtr = elementsByTag.filter(function(b) {
-		return b.getAttribute(Attribute) !== null;
-	});
-
-	return elementsByTagAndAtr;
-};
-
-
 var keyDownHandler = function (event) {
-	var keyCode = event.keyCode.toString();
-	var buttonForKey = findElementsByTagAndAtr('button', 'data-key')
-	.find(function(b) {
-		return b.dataset.key === keyCode;
-	});
-	var audioForKey = findElementsByTagAndAtr('audio', 'data-key')
-	.find(function(a) {
-		return a.dataset.key === keyCode;
-	});
+	var audioForKey = document.querySelector(`audio[data-key="${event.keyCode}"]`);
+	var buttonForKey = document.querySelector(`button[data-key="${event.keyCode}"]`);
+
 	if (audioForKey && buttonForKey) {
 		buttonForKey.classList.add('playing');
 		audioForKey.addEventListener('ended', function () {
@@ -29,8 +13,8 @@ var keyDownHandler = function (event) {
 
 document.addEventListener("DOMContentLoaded", function () {
 	window.addEventListener('keydown', keyDownHandler);
-	var buttons = findElementsByTagAndAtr('button', 'data-key');
-	var audios = findElementsByTagAndAtr('audio', 'data-key');
+	var buttons = document.querySelectorAll('button[data-key]');
+	var audios = document.querySelectorAll('audio[data-key]');
 	var soundNames = {};
 	audios.forEach(function(a) {
 		var audioCode = a.dataset.key;
