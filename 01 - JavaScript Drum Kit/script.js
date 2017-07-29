@@ -14,18 +14,12 @@ const keyDownHandler = function (event) {
 
 document.addEventListener("DOMContentLoaded", function () {
 	window.addEventListener('keydown', keyDownHandler);
-	const buttons = document.querySelectorAll('button[data-key]');
-	const audios = document.querySelectorAll('audio[data-key]');
-	const soundNames = {};
-	audios.forEach(function(a) {
-		const audioCode = a.dataset.key;
-		const audioName = a.src.match(/sounds\/([a-zA-Z]+)\.wav$/i);
-		soundNames[audioCode] = audioName[1];
-	});
-	buttons.forEach(function(b) {
+
+	document.querySelectorAll('button[data-key]').forEach(function(b) {
 		const soundElement = document.createElement('span');
 		soundElement.classList.add('sound');
-		soundElement.innerHTML = soundNames[b.dataset.key];
+		const audioElelement = document.querySelector(`audio[data-key="${b.dataset.key}"]`);
+		soundElement.innerHTML = audioElelement.src.match(/sounds\/([a-zA-Z]+)\.wav$/i)[1];
 		b.appendChild(soundElement);
 	});
 });
