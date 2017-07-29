@@ -1,20 +1,33 @@
+var findElementsByTagAndAtr = function (tagName, Attribute) {
+	var elementsByTag = Array.prototype.slice.call(document.getElementsByTagName(tagName));
+	var elementsByTagAndAtr = elementsByTag.filter(function(b) {
+		return b.getAttribute(Attribute) !== null;
+	});
+
+	return elementsByTagAndAtr;
+};
+
+
 var keyDownHandler = function (event) {
 	console.log("caught event", event);
-};
-
-var assignListenersToButtons = function () {
-	var buttons = Array.prototype.slice.call(document.getElementsByTagName('button'));
-	var soundButtons = buttons.filter(function(b) {
-		return b.getAttribute('data-key') !== null;
+	var keyCode = event.keyCode.toString();
+	var buttonForKey = findElementsByTagAndAtr('button', 'data-key')
+	.find(function(b) {
+		return b.dataset.key === keyCode;
 	});
-
-	soundButtons.forEach(function(b) {
-		b.addEventListener('keydown', keyDownHandler);
+	var audioForKey = findElementsByTagAndAtr('audio', 'data-key')
+	.find(function(a) {
+		return a.dataset.key === keyCode;
 	});
+	if (audioForKey && buttonForKey) {
+		buttonForKey.classList.add('playing');
+		audioForKey.addEventListener('ended', function () {
+			buttonForKey.classList.remove('playing');
+		});
+		audioForKey.play();
+	}
 };
-
-
 
 document.addEventListener("DOMContentLoaded", function () {
-	assignListenersToButtons();
+	window.addEventListener('keydown', keyDownHandler);
 });
