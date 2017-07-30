@@ -1,0 +1,35 @@
+body {
+	background-color: #feffff;
+}
+
+.clock {
+	background-color: #daad86;
+	width: 20rem;
+	height: 20rem;
+	border-radius: 50%;
+	position: absolute;
+    top: 25%;
+    left: 50%;
+    margin-left: -10rem;
+
+}
+
+.clock-face {
+	background-color: #98dafc;
+	z-index: 1;
+    border-radius: 50%;
+    width: 80%;
+    height: 80%;
+    position: absolute;
+    top: 10%;
+    left: 10%;
+}
+
+.hand {
+	background-color: #312c32;
+	width: 50%;
+    height: 3px;
+    z-index: 2;
+    position: absolute;
+    top: 50%;
+}
