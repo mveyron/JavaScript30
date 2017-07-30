@@ -35,3 +35,12 @@ body {
     left: 49%;
     transform-origin: center bottom;
 }
+
+.second-hand {
+	width: 1px;
+}
+
+.hour-hand {
+	height: 40%;
+	top: 11%;
+}
