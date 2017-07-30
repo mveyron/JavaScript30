@@ -18,11 +18,12 @@ body {
 	background-color: #98dafc;
 	z-index: 1;
     border-radius: 50%;
-    width: 80%;
-    height: 80%;
+    width: 78%;
+    height: 78%;
     position: absolute;
-    top: 10%;
-    left: 10%;
+    top: 9%;
+    left: 9%;
+    padding: 2%;
 }
 
 .hand {
