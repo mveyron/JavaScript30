@@ -26,8 +26,12 @@ const updateMinutes = () => {
 const updateHours = () => {
 	const now = new Date();
 	const hours = now.getHours();
+	const minutes = now.getMinutes();
 	const hoursOnClock = hours > 12 ? hours - 12 : hours;
-	const angle = hoursOnClock * 30;
+	// instead of going from 1h to 2h (30deg), 
+	// make it smoother by adding 6deg each 12 seconds
+	const correction = (minutes - minutes % 12) / 12;
+	const angle = hoursOnClock * 30 + correction * 6;
 	setAngle(hoursHand, angle);
 };
 
