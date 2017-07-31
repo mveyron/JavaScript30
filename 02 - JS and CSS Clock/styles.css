@@ -38,7 +38,9 @@ body {
     position: absolute;
     left: 49%;
     transform-origin: center bottom;
-    border-radius: 50%
+    border-radius: 50%;
+    transition: transform 0.05s;
+    transition-timing-function: cubic-bezier(0.35, 2.8, 1, 0.82);
 }
 
 .hand:not(.second-hand) {
