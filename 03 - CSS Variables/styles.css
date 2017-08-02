@@ -10,7 +10,6 @@ body {
 	color: #677077;
 	margin: 0;
 	padding: 0;
-
 }
 
 .page-wrapper {
@@ -28,7 +27,6 @@ body {
 	border-radius: 5px;
 	padding: 8px;
 	margin-bottom: 1rem;
-
 }
 
 .controls-container p {
@@ -59,5 +57,7 @@ select {
 img {
 	width: 100%;
 	overflow: hidden;
-	border: var(--image-border-width) var(--image-border-style) var(--image-border-color);
+	border-width: var(--image-border-width);
+	border-style: var(--image-border-style);
+	border-color: var(--image-border-color);
 }
