@@ -13,12 +13,13 @@ body {
 }
 
 .page-wrapper {
-	width: 35rem;
     height: 100%;
-    margin: 10% auto;
+    margin-top: 10%;
 }
 
 .controls-container {
+	margin: 0 auto;
+	width: 30rem;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
@@ -55,8 +56,10 @@ select {
 }
 
 img {
-	width: 100%;
+	display: block;
+    margin: auto;
 	overflow: hidden;
+	box-sizing: content-box;
 	border-width: var(--image-border-width);
 	border-style: var(--image-border-style);
 	border-color: var(--image-border-color);
