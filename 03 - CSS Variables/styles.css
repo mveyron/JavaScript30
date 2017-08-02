@@ -1,0 +1,63 @@
+:root {
+	--image-border-color: #c2d4d8;
+	--image-border-style: solid;
+	--image-border-width: 1px;
+}
+
+body {
+	background-color: #f2efe8;
+	font-family: "Open Sans", sans-serif;
+	color: #677077;
+	margin: 0;
+	padding: 0;
+
+}
+
+.page-wrapper {
+	width: 35rem;
+    height: 100%;
+    margin: 10% auto;
+}
+
+.controls-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: flex-end;
+	border: 1px solid #c2d4d8;
+	border-radius: 5px;
+	padding: 8px;
+	margin-bottom: 1rem;
+
+}
+
+.controls-container p {
+	width: 100%;
+}
+
+input[type="color"],
+input[type="range"],
+select {
+	border: 1px solid #c2d4d8;
+	border-radius: 5px;
+	height: 1.5rem;
+}
+
+input[type="color"] {
+	width: 5rem;
+}
+
+input[type="range"] {
+	width: 7rem;
+}
+
+select {
+	width: 6rem;
+	color: #677077;
+}
+
+img {
+	width: 100%;
+	overflow: hidden;
+	border: var(--image-border-width) var(--image-border-style) var(--image-border-color);
+}

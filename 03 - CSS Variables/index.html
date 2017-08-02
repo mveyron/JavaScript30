@@ -1,0 +1,39 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>CSS Variables</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<section class="page-wrapper">
+		<div class="controls-container">
+			<p>Style your picture frame</p>
+
+			<label>Color:
+				<input type="color" name="border-color"></label>
+			
+			<label>Style:
+				<select>
+					<option value="solid">Solid</option>
+					<option value="dotted">Dotted</option>
+					<option value="dashed">Dashed</option>
+					<option value="double">Double</option>
+					<option value="groove">Groove</option>
+					<option value="ridge">Ridge</option>
+					<option value="inset">Inset</option>
+					<option value="outset">Outset</option>
+				</select>
+			</label>
+			<label>Width:
+				<input type="range" name="border-width" min=0 max=100>
+			</label>
+		</div>
+		<div>
+			<img src="https://68.media.tumblr.com/47f71d1fa2b73803306107b60ff67899/tumblr_nnzbfh0IXa1s3z6qqo1_500.jpg"/>
+		</div>
+	</section>
+  <script src="script.js"></script>
+</body>
+</html>
