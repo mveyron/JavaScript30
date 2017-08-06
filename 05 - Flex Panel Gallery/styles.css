@@ -45,20 +45,43 @@ html {
     flex-direction: column;
     justify-content: space-around;
     transition: flex-basis 0.7s;
+    font-size: 2rem;
 }
 
 .panels > div:hover {
 	flex-basis: 60%;
 }
 
+.panels > div:hover >p {
+	font-size: 3em;
+}
+
+.panels > div:hover >p:first-child,
+.panels >div:hover >p:last-child {
+	transform: none;
+	font-size: 1.5em;
+}
+
 .panels p {
 	color: white;
 	font-family: 'Great Vibes', cursive;
 	text-shadow: 2px 2px 4px #aaa;
-	font-size: 2rem;
 	text-align: center;
+	flex: 1 0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: transform 0.5s;
+}
+
+.panels >div >p:first-child {
+	transform: translateY(-100%);
+}
+
+.panels >div >p:last-child {
+	transform: translateY(100%);
 }
 
 .panels p:nth-child(2) {
-	font-size: 3rem;
+	font-size: 1.5em;
 }
