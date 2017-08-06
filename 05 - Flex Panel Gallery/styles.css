@@ -1,0 +1,64 @@
+body,
+html {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+
+.panel1{
+	background-image: url('http://68.media.tumblr.com/9f0101f8218c326c4f379f2372807e79/tumblr_n3dt2vyY5r1rq5o2oo1_1280.jpg');
+}
+
+.panels .panel2 {
+	background-image: url('http://68.media.tumblr.com/tumblr_mcf1jxJiHx1rq5o2oo1_1280.jpg');
+	background-position: left top;
+}
+
+.panel3 {
+	background-image: url('http://68.media.tumblr.com/a796df6dc2610257dfd66f104cf8df70/tumblr_n522lsQd9n1rq5o2oo1_1280.jpg');
+}
+
+.panels .panel4 {
+	background-image: url('http://68.media.tumblr.com/3acafa2c5897d6f972b95375490b52b6/tumblr_meu2yaDuka1qk0go1o1_1280.jpg');
+	background-position: left top;
+}
+
+.panel5 {
+	background-image: url('http://68.media.tumblr.com/dbd6871136e1552e7592b31c050a633c/tumblr_n4d029v3EJ1qi0bfio1_1280.jpg');
+}
+
+.panels {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	align-items: stretch;
+    justify-content: space-around;
+
+}
+
+.panels > div {
+	flex-basis: 20%;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    transition: flex-basis 0.7s;
+}
+
+.panels > div:hover {
+	flex-basis: 60%;
+}
+
+.panels p {
+	color: white;
+	font-family: 'Great Vibes', cursive;
+	text-shadow: 2px 2px 4px #aaa;
+	font-size: 2rem;
+	text-align: center;
+}
+
+.panels p:nth-child(2) {
+	font-size: 3rem;
+}
