@@ -1,0 +1,26 @@
+html {
+	box-sizing: border-box;
+	background-color: #FFDE00;
+	font-family: 'Muli', sans-serif;
+}
+
+.search-form {
+	max-width: 400px;
+	margin: 50px auto;
+}
+
+
+input.search {
+	width: 100%;
+	font-family: inherit;
+	font-size: 3rem;
+	font-weight: bold;
+	border: 7px solid rgba(225, 226, 218, 0.8);
+    border-radius: 5px;
+    text-align: center;
+}
+
+.search:focus,
+.search:active {
+	outline: 1px dotted grey;
+}
