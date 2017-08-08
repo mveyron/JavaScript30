@@ -62,3 +62,7 @@ span.population {
 	transform: perspective(100px) rotateX(3deg);
 	background: linear-gradient(to top, white, white 50%, rgb(223, 226, 234));
 }
+
+span.match {
+	background-color: #ffc600;
+}

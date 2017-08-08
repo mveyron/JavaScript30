@@ -49,10 +49,12 @@ const showSuggestions = (e) => {
 		showSuggestionPlaceholder('Nothing found');
 		return;
 	}
-		
+	const re = new RegExp(`(${searchText})`, 'gi');
 	suggestions.forEach((s) => {
 		const element = document.createElement('li');
-		element.innerHTML = `<span class="city">${s.city}, ${s.state}</span> ` +
+		const cityName = s.city.replace(re, '<span class="match">$1</span>');
+		const stateName = s.state.replace(re, '<span class="match">$1</span>');
+		element.innerHTML = `<span class="city">${cityName}, ${stateName}</span> ` +
 							`<span class="population">${parseInt(s.population, 10).toLocaleString('en')}</span>`;
 		suggestionsNode.appendChild(element);
 	})
