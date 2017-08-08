@@ -1,7 +1,12 @@
 html {
 	box-sizing: border-box;
 	background-color: #FFDE00;
-	font-family: 'Muli', sans-serif;
+	font-family: 'Roboto', sans-serif;
+	overflow-y: hidden;
+}
+
+* {
+	box-sizing: border-box;
 }
 
 .search-form {
@@ -13,14 +18,47 @@ html {
 input.search {
 	width: 100%;
 	font-family: inherit;
-	font-size: 3rem;
-	font-weight: bold;
+	font-size: 40px;
+	padding: 10px 0;
 	border: 7px solid rgba(225, 226, 218, 0.8);
     border-radius: 5px;
     text-align: center;
+    box-shadow: 2px 0px 5px rgb(208, 210, 198),
+    			-2px 0px 5px rgb(208, 210, 198);
 }
 
 .search:focus,
 .search:active {
-	outline: 1px dotted grey;
+	outline: none;
+}
+
+.suggestions {
+	padding: 0;
+    margin: 0 30px;
+	width: 340px;
+}
+
+.suggestions li {
+	list-style-type: none;
+	background-color: white;
+	padding: 15px;
+	font-size: 16px;
+	margin: 0;
+	box-shadow: 2px 0px 2px rgb(208, 210, 198),
+    			-2px 0px 2px rgb(208, 210, 198);
+}
+
+span.population {
+	float: right;
+	font-size: 14px;
+}
+
+.suggestions li:nth-child(odd) {
+	transform: perspective(100px) rotateX(-3deg);
+	background: linear-gradient(to bottom, white, rgb(223, 226, 234));
+}
+
+.suggestions li:nth-child(even) {
+	transform: perspective(100px) rotateX(3deg);
+	background: linear-gradient(to top, white, white 50%, rgb(223, 226, 234));
 }
